@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "0.1.0",
+  "schemaVersion": "0.2.0",
   "methodState": "screening",
   "sources": [
     {
@@ -8,6 +8,7 @@
       "title": "Phase 1 declared seed tables",
       "candidate_urls": [],
       "format": "csv",
+      "portal_family": "declared_csv",
       "licence": "repository-declared; source notes required per row before publication",
       "attribution": "Ventus Ltd declared seed data with source notes",
       "redistribution_state": "not_redistributed",
@@ -22,6 +23,7 @@
         "https://api.neso.energy/api/3/action/datapackage_show?id=gis-boundaries-for-gb-dno-license-areas"
       ],
       "format": "ckan_geojson_or_shapefile",
+      "portal_family": "ckan",
       "licence": "NESO Open Licence; verify per resource at fetch time",
       "attribution": "Supported by National Energy SO Open Data",
       "redistribution_state": "check_terms",
@@ -29,11 +31,27 @@
       "notes": "Source geometry may require reprojection to EPSG:4326 for RFC 7946 GeoJSON. Treat as approximate screening geometry."
     },
     {
+      "source_id": "neso_catalogue",
+      "source_class": "neso",
+      "title": "NESO data portal catalogue",
+      "candidate_urls": [
+        "https://api.neso.energy/api/3/action/package_list"
+      ],
+      "format": "ckan_json",
+      "portal_family": "ckan",
+      "licence": "verify per package/resource",
+      "attribution": "Supported by National Energy SO Open Data where applicable",
+      "redistribution_state": "check_terms",
+      "target": "audit/source_catalogues/neso_catalogue/",
+      "notes": "Catalogue discovery only. Dataset redistribution depends on per-resource licence."
+    },
+    {
       "source_id": "ofgem_licence_register",
       "source_class": "ofgem",
       "title": "Electricity licence register",
       "candidate_urls": [],
       "format": "to_be_confirmed",
+      "portal_family": "public_file_or_web",
       "licence": "OGL v3 expected; verify before fetch",
       "attribution": "Contains public sector information licensed under the Open Government Licence v3.0",
       "redistribution_state": "check_terms",
@@ -46,6 +64,7 @@
       "title": "Stable UK government public energy-data source class",
       "candidate_urls": [],
       "format": "mixed",
+      "portal_family": "public_file_or_web",
       "licence": "OGL v3 expected for most datasets; verify per dataset",
       "attribution": "Contains public sector information licensed under the Open Government Licence v3.0",
       "redistribution_state": "check_terms",
@@ -53,16 +72,157 @@
       "notes": "Use stable folder name. Store publishing department as data lineage, not as folder identity."
     },
     {
-      "source_id": "ireland_network_sources",
+      "source_id": "ukpn_open_data",
+      "source_class": "dno_portal",
+      "title": "UK Power Networks open data portal",
+      "operator_id": "ukpn",
+      "candidate_urls": [
+        "https://ukpowernetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets"
+      ],
+      "format": "opendatasoft_catalogue",
+      "portal_family": "opendatasoft",
+      "licence": "verify per dataset",
+      "attribution": "UK Power Networks open data; verify per dataset",
+      "redistribution_state": "check_terms",
+      "target": "audit/source_catalogues/ukpn_open_data/",
+      "notes": "Use records endpoint for bounded preview/schema only; use exports endpoint for bulk extraction."
+    },
+    {
+      "source_id": "spen_open_data",
+      "source_class": "dno_portal",
+      "title": "SP Energy Networks open data portal",
+      "operator_id": "spen",
+      "candidate_urls": [
+        "https://spenergynetworks.opendatasoft.com/api/explore/v2.1/catalog/datasets"
+      ],
+      "format": "opendatasoft_catalogue",
+      "portal_family": "opendatasoft",
+      "licence": "verify per dataset",
+      "attribution": "SP Energy Networks open data; verify per dataset",
+      "redistribution_state": "check_terms",
+      "target": "audit/source_catalogues/spen_open_data/",
+      "notes": "Use records endpoint for bounded preview/schema only; use exports endpoint for bulk extraction."
+    },
+    {
+      "source_id": "enwl_open_data",
+      "source_class": "dno_portal",
+      "title": "Electricity North West open data portal",
+      "operator_id": "enwl",
+      "candidate_urls": [
+        "https://electricitynorthwest.opendatasoft.com/api/explore/v2.1/catalog/datasets"
+      ],
+      "format": "opendatasoft_catalogue",
+      "portal_family": "opendatasoft",
+      "licence": "verify per dataset",
+      "attribution": "Electricity North West open data; verify per dataset",
+      "redistribution_state": "check_terms",
+      "target": "audit/source_catalogues/enwl_open_data/",
+      "notes": "Candidate URL must be verified by catalogue fetcher; do not publish data unless licence is confirmed."
+    },
+    {
+      "source_id": "npg_open_data",
+      "source_class": "dno_portal",
+      "title": "Northern Powergrid open data portal",
+      "operator_id": "npg",
+      "candidate_urls": [
+        "https://northernpowergrid.opendatasoft.com/api/explore/v2.1/catalog/datasets"
+      ],
+      "format": "opendatasoft_catalogue",
+      "portal_family": "opendatasoft",
+      "licence": "verify per dataset",
+      "attribution": "Northern Powergrid open data; verify per dataset",
+      "redistribution_state": "check_terms",
+      "target": "audit/source_catalogues/npg_open_data/",
+      "notes": "Candidate URL must be verified by catalogue fetcher; do not publish data unless licence is confirmed."
+    },
+    {
+      "source_id": "nged_connected_data",
+      "source_class": "dno_portal",
+      "title": "National Grid Electricity Distribution connected data portal",
+      "operator_id": "nged",
+      "candidate_urls": [
+        "https://connecteddata.nationalgrid.co.uk/api/3/action/package_list"
+      ],
+      "format": "ckan_json",
+      "portal_family": "ckan",
+      "api_key_env": "NGED_CONNECTED_DATA_API_KEY",
+      "licence": "verify per dataset",
+      "attribution": "National Grid Electricity Distribution connected data; verify per dataset",
+      "redistribution_state": "check_terms",
+      "target": "audit/source_catalogues/nged_connected_data/",
+      "notes": "Token-gated CKAN source. Never commit API tokens. Rate-limit and write degraded audit state on auth failure."
+    },
+    {
+      "source_id": "ssen_distribution_data_portal",
+      "source_class": "dno_portal",
+      "title": "SSEN Distribution data portal",
+      "operator_id": "ssen",
+      "candidate_urls": [
+        "https://data.ssen.co.uk/"
+      ],
+      "format": "metadata_portal",
+      "portal_family": "metadata_rdf_jsonld_or_static",
+      "licence": "verify per dataset",
+      "attribution": "SSEN Distribution data; verify per dataset",
+      "redistribution_state": "check_terms",
+      "target": "audit/source_catalogues/ssen_distribution_data_portal/",
+      "notes": "Do not treat as OpenDataSoft. Build a separate fetcher after portal metadata mechanics are verified."
+    },
+    {
+      "source_id": "nie_networks_data",
       "source_class": "ireland",
-      "title": "Ireland and Northern Ireland network public datasets",
+      "title": "NIE Networks public data",
+      "operator_id": "nie_networks",
       "candidate_urls": [],
       "format": "mixed",
+      "portal_family": "public_file_or_web",
       "licence": "verify per dataset",
-      "attribution": "Data attribution to be stored per dataset",
+      "attribution": "NIE Networks; verify per dataset",
       "redistribution_state": "restricted",
-      "target": "build/parquet/ireland/",
-      "notes": "Default restricted until ESB, EirGrid, SONI, NIE and regulator terms are confirmed."
+      "target": "build/parquet/ireland/nie_networks/",
+      "notes": "Northern Ireland default restricted until terms are cleared."
+    },
+    {
+      "source_id": "esb_networks_data",
+      "source_class": "ireland",
+      "title": "ESB Networks public data",
+      "operator_id": "esb_networks",
+      "candidate_urls": [],
+      "format": "mixed",
+      "portal_family": "public_file_or_web",
+      "licence": "verify per dataset",
+      "attribution": "ESB Networks; verify per dataset",
+      "redistribution_state": "restricted",
+      "target": "build/parquet/ireland/esb_networks/",
+      "notes": "Republic of Ireland default restricted until terms are cleared."
+    },
+    {
+      "source_id": "eirgrid_data",
+      "source_class": "ireland",
+      "title": "EirGrid public data",
+      "operator_id": "eirgrid",
+      "candidate_urls": [],
+      "format": "mixed",
+      "portal_family": "public_file_or_web",
+      "licence": "verify per dataset",
+      "attribution": "EirGrid; verify per dataset",
+      "redistribution_state": "restricted",
+      "target": "build/parquet/ireland/eirgrid/",
+      "notes": "Default restricted until terms are cleared."
+    },
+    {
+      "source_id": "soni_data",
+      "source_class": "ireland",
+      "title": "SONI public data",
+      "operator_id": "soni",
+      "candidate_urls": [],
+      "format": "mixed",
+      "portal_family": "public_file_or_web",
+      "licence": "verify per dataset",
+      "attribution": "SONI; verify per dataset",
+      "redistribution_state": "restricted",
+      "target": "build/parquet/ireland/soni/",
+      "notes": "Default restricted until terms are cleared."
     }
   ]
 }
