@@ -1,0 +1,6 @@
+region,system_operator_id,owner_operator_id,jurisdiction,schemaVersion,methodState,source,provenance,retrieved_at,notes
+England and Wales,neso,nget,GB,0.1.0,screening,declared_phase1_seed,declared,,verify region boundary and licence source before publication
+South Scotland,neso,spt,GB,0.1.0,screening,declared_phase1_seed,declared,,verify region boundary and licence source before publication
+North Scotland,neso,ssen_t,GB,0.1.0,screening,declared_phase1_seed,declared,,verify region boundary and licence source before publication
+Northern Ireland,soni,nie_networks,NI,0.1.0,screening,declared_phase1_seed,declared,,verify owner/operator split before publication
+Republic of Ireland,eirgrid,esb_networks,RoI,0.1.0,screening,declared_phase1_seed,declared,,verify owner/operator split before publication
