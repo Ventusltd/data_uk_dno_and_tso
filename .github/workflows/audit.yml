@@ -22,5 +22,11 @@ jobs:
           python-version: '3.12'
       - name: Validate declared data
         run: python scripts/validate_declared.py
+      - name: Validate operator schema contract
+        run: python scripts/validate_schema_drift.py schemas/operators.schema.json data/declared/operators.csv
       - name: Build declared JSON receipts
         run: python scripts/build_declared.py
+      - name: Smoke test source registry JSON
+        run: python -m json.tool config/sources.json > /tmp/sources.json
+      - name: Smoke test schema JSON
+        run: for f in schemas/*.schema.json; do python -m json.tool "$f" > /tmp/schema.json; done
