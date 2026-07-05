@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/operators.schema.json",
+  "title": "operators",
+  "type": "object",
+  "required": ["operator_id", "brand_name", "role", "jurisdiction", "regulator_id", "is_owner", "is_system_operator", "schemaVersion", "methodState", "source", "provenance"],
+  "properties": {
+    "operator_id": { "type": "string" },
+    "legal_name": { "type": ["string", "null"] },
+    "brand_name": { "type": "string" },
+    "role": { "type": "string", "enum": ["DNO", "IDNO", "TO", "SO", "DSO"] },
+    "jurisdiction": { "type": "string", "enum": ["GB", "NI", "RoI", "UK"] },
+    "regulator_id": { "type": "string" },
+    "parent_company": { "type": ["string", "null"] },
+    "is_owner": { "type": "boolean" },
+    "is_system_operator": { "type": "boolean" },
+    "schemaVersion": { "type": "string" },
+    "methodState": { "type": "string" },
+    "source": { "type": "string" },
+    "provenance": { "type": "string" },
+    "retrieved_at": { "type": ["string", "null"] },
+    "notes": { "type": ["string", "null"] }
+  }
+}
