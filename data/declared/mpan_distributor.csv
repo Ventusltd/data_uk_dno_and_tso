@@ -1,0 +1,15 @@
+mpan_id,gsp_group,licence_area,licensed_dno_entity,operator_id,jurisdiction,schemaVersion,methodState,source,provenance,retrieved_at,notes
+10,_A,Eastern England,Eastern Power Networks plc,ukpn,GB,0.1.0,screening,declared_phase1_seed,declared,,verify against Ofgem and Elexon before publication
+11,_B,East Midlands,National Grid Electricity Distribution East Midlands plc,nged,GB,0.1.0,screening,declared_phase1_seed,declared,,verify legal-name punctuation before publication
+12,_C,London,London Power Networks plc,ukpn,GB,0.1.0,screening,declared_phase1_seed,declared,,verify against Ofgem and Elexon before publication
+13,_D,Merseyside and North Wales,SP Manweb plc,spen,GB,0.1.0,screening,declared_phase1_seed,declared,,verify against Ofgem and Elexon before publication
+14,_E,West Midlands,National Grid Electricity Distribution West Midlands plc,nged,GB,0.1.0,screening,declared_phase1_seed,declared,,verify legal-name punctuation before publication
+15,_F,North Eastern,Northern Powergrid Northeast plc,npg,GB,0.1.0,screening,declared_phase1_seed,declared,,verify legal-name punctuation before publication
+16,_G,North Western,Electricity North West Ltd,enwl,GB,0.1.0,screening,declared_phase1_seed,declared,,verify against Ofgem and Elexon before publication
+17,_P,North Scotland,Scottish Hydro Electric Power Distribution plc,ssen,GB,0.1.0,screening,declared_phase1_seed,declared,,GSP group is intentionally not sequential
+18,_N,South Scotland,SP Distribution plc,spen,GB,0.1.0,screening,declared_phase1_seed,declared,,GSP group is intentionally not sequential
+19,_J,South Eastern,South Eastern Power Networks plc,ukpn,GB,0.1.0,screening,declared_phase1_seed,declared,,verify against Ofgem and Elexon before publication
+20,_H,Southern England,Southern Electric Power Distribution plc,ssen,GB,0.1.0,screening,declared_phase1_seed,declared,,GSP group is intentionally not sequential
+21,_K,South Wales,National Grid Electricity Distribution South Wales plc,nged,GB,0.1.0,screening,declared_phase1_seed,declared,,verify legal-name punctuation before publication
+22,_L,South Western England,National Grid Electricity Distribution South West plc,nged,GB,0.1.0,screening,declared_phase1_seed,declared,,verify legal-name punctuation before publication
+23,_M,Yorkshire,Northern Powergrid Yorkshire plc,npg,GB,0.1.0,screening,declared_phase1_seed,declared,,verify legal-name punctuation before publication
