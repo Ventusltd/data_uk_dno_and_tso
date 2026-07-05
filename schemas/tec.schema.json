@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/tec.schema.json",
+  "title": "transmission_queue",
+  "type": "object",
+  "required": ["source_dataset_id", "schemaVersion", "methodState", "source", "provenance"],
+  "properties": {
+    "source_dataset_id": {"type": "string"},
+    "project_id": {"type": ["string", "null"]},
+    "project_name": {"type": ["string", "null"]},
+    "technology_type": {"type": ["string", "null"]},
+    "connection_site": {"type": ["string", "null"]},
+    "queue_status": {"type": ["string", "null"]},
+    "capacity_mw": {"type": ["number", "string", "null"]},
+    "schemaVersion": {"type": "string"},
+    "methodState": {"type": "string"},
+    "source": {"type": "string"},
+    "provenance": {"type": "string"}
+  },
+  "additionalProperties": true
+}
