@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/ecr.schema.json",
+  "title": "embedded_capacity_register",
+  "type": "object",
+  "required": ["operator_id", "source_dataset_id", "schemaVersion", "methodState", "source", "provenance"],
+  "properties": {
+    "operator_id": {"type": "string"},
+    "source_dataset_id": {"type": "string"},
+    "record_id": {"type": ["string", "null"]},
+    "site_name": {"type": ["string", "null"]},
+    "technology_type": {"type": ["string", "null"]},
+    "connection_status": {"type": ["string", "null"]},
+    "substation_name": {"type": ["string", "null"]},
+    "schemaVersion": {"type": "string"},
+    "methodState": {"type": "string"},
+    "source": {"type": "string"},
+    "provenance": {"type": "string"},
+    "retrieved_at": {"type": ["string", "null"]},
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}
