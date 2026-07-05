@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en" data-globalgrid-repo="data_uk_dno_and_tso">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GlobalGrid2050 | UK DNO and TSO Data Spine</title>
+  <meta name="description" content="Canonical public-data spine for UK and Ireland electricity network operators, DNO licence areas, transmission owners, NESO, regulators and government public energy datasets.">
+  <meta name="robots" content="index,follow">
+  <meta name="globalgrid:repo" content="Ventusltd/data_uk_dno_and_tso">
+  <meta name="globalgrid:repo-role" content="data-spine">
+  <meta name="globalgrid:domain" content="uk-dno-tso-ireland-network-authorities">
+  <meta name="globalgrid:schema-version" content="0.1.0">
+  <meta name="globalgrid:method-state" content="screening">
+  <meta name="globalgrid:provenance" content="declared-first">
+  <meta name="globalgrid:spider-node-id" content="Ventusltd/data_uk_dno_and_tso">
+  <meta name="globalgrid:spider-node-type" content="data_repository">
+  <meta name="globalgrid:spider-ingest" content="config/sources.json;docs/ARCHITECTURE.md;data/declared/operators.csv;data/declared/mpan_distributor.csv">
+  <meta name="globalgrid:spider-outgoing" content="atlas-v8;sld-financial-sandbox;uk-energy-generation-history;battery-storage-repos;idno-repos;behind-the-meter;data-federation-spiders">
+  <meta name="globalgrid:spider-incoming" content="NESO;Ofgem;UK government public data;DNO open data portals;NIUR;CRU;EirGrid;SONI;ESB Networks;NIE Networks">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #ffffff;
+      --ink: #101418;
+      --muted: #5f6b76;
+      --line: #d9e0e7;
+      --soft: #f5f8fa;
+      --accent: #0b5cad;
+      --accent-soft: #eef6ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 28px;
+      margin-bottom: 30px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      font-size: 1rem;
+      margin: 34px 0 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    p { max-width: 820px; }
+
+    .lede {
+      font-size: 1.08rem;
+      color: #24303a;
+      margin-bottom: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 18px 0 8px;
+    }
+
+    a.card, .card {
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+    }
+
+    a.card:hover {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .card strong { display: block; margin-bottom: 5px; }
+    .card span { color: var(--muted); font-size: 0.92rem; }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0 0;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 0.86rem;
+      color: #2a3640;
+      background: var(--soft);
+    }
+
+    code, pre {
+      font-family: Consolas, Monaco, 'Courier New', monospace;
+      font-size: 0.92rem;
+    }
+
+    pre {
+      overflow: auto;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 42px;
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "UK DNO and TSO Data Spine",
+    "alternateName": "data_uk_dno_and_tso",
+    "description": "Canonical public-data spine for UK and Ireland electricity network operators, DNO licence areas, transmission owners, NESO, regulators and government public energy datasets.",
+    "creator": {
+      "@type": "Organization",
+      "name": "Ventus Ltd"
+    },
+    "isPartOf": {
+      "@type": "CreativeWork",
+      "name": "GlobalGrid2050"
+    },
+    "codeRepository": "https://github.com/Ventusltd/data_uk_dno_and_tso",
+    "keywords": [
+      "GlobalGrid2050",
+      "DNO",
+      "TSO",
+      "NESO",
+      "Ofgem",
+      "MPAN",
+      "electricity distribution",
+      "transmission owners",
+      "Ireland electricity networks",
+      "data federation"
+    ],
+    "variableMeasured": [
+      "operator_id",
+      "mpan_id",
+      "licence_area",
+      "jurisdiction",
+      "regulator_id",
+      "network_stats",
+      "source",
+      "provenance"
+    ],
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "name": "Source registry",
+        "encodingFormat": "application/json",
+        "contentUrl": "config/sources.json"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Declared operators",
+        "encodingFormat": "text/csv",
+        "contentUrl": "data/declared/operators.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "MPAN distributor lookup",
+        "encodingFormat": "text/csv",
+        "contentUrl": "data/declared/mpan_distributor.csv"
+      }
+    ],
+    "additionalProperty": [
+      {"@type": "PropertyValue", "name": "globalgrid:spider-node-id", "value": "Ventusltd/data_uk_dno_and_tso"},
+      {"@type": "PropertyValue", "name": "globalgrid:spider-node-type", "value": "data_repository"},
+      {"@type": "PropertyValue", "name": "globalgrid:method-state", "value": "screening"},
+      {"@type": "PropertyValue", "name": "globalgrid:backend-hint", "value": "Read config/sources.json first; use docs/ARCHITECTURE.md for table intent; use data/declared/*.csv for phase-one seed entities; do not treat network_stats_seed.csv as verified published stats."}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">GlobalGrid2050 data spine</div>
+      <h1>UK DNO and TSO Data Spine</h1>
+      <p class="lede">A public, declared-first repository for electricity network authorities across Great Britain, Northern Ireland and the Republic of Ireland. It separates operators, owners, licence areas, regulators, public government datasets and future operational network layers.</p>
+      <div class="pill-row" aria-label="Repository tags">
+        <span class="pill">DNO</span>
+        <span class="pill">IDNO</span>
+        <span class="pill">NESO</span>
+        <span class="pill">Transmission owners</span>
+        <span class="pill">MPAN areas</span>
+        <span class="pill">Ireland networks</span>
+        <span class="pill">Ofgem</span>
+        <span class="pill">UK government public data</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Repository purpose</h2>
+      <p>This repo is designed as a backend data authority for GlobalGrid2050. Heavy analytical truth is intended to live as Parquet, DuckDB is the local query engine, and web applications consume only compact derived JSON or GeoJSON.</p>
+    </section>
+
+    <section>
+      <h2>Human entry points</h2>
+      <div class="grid">
+        <a class="card" href="README.md"><strong>README</strong><span>Repository purpose, folder map and audit gate.</span></a>
+        <a class="card" href="docs/ARCHITECTURE.md"><strong>Architecture</strong><span>Data layers, core tables, DuckDB and Parquet rules.</span></a>
+        <a class="card" href="docs/DEFINITIONS.md"><strong>Definitions</strong><span>DNO, IDNO, TO, SO, NESO and provenance terms.</span></a>
+        <a class="card" href="docs/DATA_SOURCES.md"><strong>Data sources</strong><span>Source classes, licensing rule and attribution approach.</span></a>
+        <a class="card" href="docs/PHASE_2_DEEP_STUDY_SCOPE.md"><strong>Phase 2 scope</strong><span>Portal mechanics, DFES, LTDS, ECR, headroom and Ireland pass.</span></a>
+        <a class="card" href="docs/CHANGELOG.md"><strong>Changelog</strong><span>Visible record of repo evolution.</span></a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Machine entry points</h2>
+      <div class="grid" data-globalgrid-spider-entrypoints="true">
+        <a class="card" href="config/sources.json" data-spider-role="source-registry"><strong>config/sources.json</strong><span>First file for spiders and fetcher orchestration.</span></a>
+        <a class="card" href="data/declared/operators.csv" data-spider-role="operator-entities"><strong>operators.csv</strong><span>Canonical phase-one operator IDs and roles.</span></a>
+        <a class="card" href="data/declared/mpan_distributor.csv" data-spider-role="mpan-join-key"><strong>mpan_distributor.csv</strong><span>GB licence-area join key for MPAN IDs 10 to 23.</span></a>
+        <a class="card" href="data/declared/transmission_ownership.csv" data-spider-role="owner-operator-bridge"><strong>transmission_ownership.csv</strong><span>Bridge between system operators and transmission owners.</span></a>
+        <a class="card" href="data/declared/department_lineage.csv" data-spider-role="government-lineage"><strong>department_lineage.csv</strong><span>DECC, BEIS and DESNZ naming lineage under stable public-data folder logic.</span></a>
+        <a class="card" href="schemas/operators.schema.json" data-spider-role="schema"><strong>operators.schema.json</strong><span>Machine-readable table contract for operator entities.</span></a>
+      </div>
+    </section>
+
+    <section id="spider-backend-hints" data-globalgrid-spider-hints="true">
+      <h2>Backend hints for federation spiders</h2>
+      <pre>{
+  "node_id": "Ventusltd/data_uk_dno_and_tso",
+  "node_type": "data_repository",
+  "domain": "uk_dno_tso_ireland_network_authorities",
+  "read_order": [
+    "config/sources.json",
+    "docs/ARCHITECTURE.md",
+    "data/declared/operators.csv",
+    "data/declared/mpan_distributor.csv",
+    "data/declared/transmission_ownership.csv",
+    "data/declared/department_lineage.csv"
+  ],
+  "truth_layers": {
+    "declared_seed": "data/declared/",
+    "generated_json": "build/json/",
+    "generated_parquet": "build/parquet/",
+    "audit_receipts": "audit/"
+  },
+  "incoming_source_classes": [
+    "NESO",
+    "Ofgem",
+    "UK government public data",
+    "DNO open data portals",
+    "NIUR",
+    "CRU",
+    "EirGrid",
+    "SONI",
+    "ESB Networks",
+    "NIE Networks"
+  ],
+  "outgoing_consumers": [
+    "atlas_v8",
+    "sld_financial_sandbox",
+    "uk_energy_generation_history",
+    "battery_storage_repos",
+    "idno_repos",
+    "behind_the_meter",
+    "data_federation_spiders"
+  ],
+  "do_not_assume": [
+    "network_stats_seed.csv contains verified headline stats",
+    "Ireland data is redistributable before licence clearance",
+    "NESO is a transmission owner"
+  ]
+}</pre>
+    </section>
+
+    <section>
+      <h2>Current method state</h2>
+      <p>The current state is <strong>screening</strong>. The repository contains declared seed structure and source registry intent. It should be treated as a clean scaffold until public-source fetchers, licences, hashes and audit receipts promote datasets into verified generated outputs.</p>
+    </section>
+
+    <footer>
+      <p>The information published here is provided for technical documentation, research and educational purposes. It does not constitute engineering advice, regulatory advice or project-specific design guidance. Electrical infrastructure decisions must be made by appropriately qualified professionals using authoritative project data and applicable standards.</p>
+    </footer>
+  </main>
+</body>
+</html>
