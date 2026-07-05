@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "0.1.0",
+  "methodState": "screening",
+  "sources": [
+    {
+      "source_id": "declared_phase1_seed",
+      "source_class": "internal_declared",
+      "title": "Phase 1 declared seed tables",
+      "candidate_urls": [],
+      "format": "csv",
+      "licence": "repository-declared; source notes required per row before publication",
+      "attribution": "Ventus Ltd declared seed data with source notes",
+      "redistribution_state": "not_redistributed",
+      "target": "data/declared/",
+      "notes": "Used only to establish schema and first canonical entity list. Replace indicative rows with verified source-backed records before publication."
+    },
+    {
+      "source_id": "neso_dno_boundaries",
+      "source_class": "neso",
+      "title": "GB DNO licence area boundaries",
+      "candidate_urls": [
+        "https://api.neso.energy/api/3/action/datapackage_show?id=gis-boundaries-for-gb-dno-license-areas"
+      ],
+      "format": "ckan_geojson_or_shapefile",
+      "licence": "NESO Open Licence; verify per resource at fetch time",
+      "attribution": "Supported by National Energy SO Open Data",
+      "redistribution_state": "check_terms",
+      "target": "build/geojson/licence_areas/",
+      "notes": "Source geometry may require reprojection to EPSG:4326 for RFC 7946 GeoJSON. Treat as approximate screening geometry."
+    },
+    {
+      "source_id": "ofgem_licence_register",
+      "source_class": "ofgem",
+      "title": "Electricity licence register",
+      "candidate_urls": [],
+      "format": "to_be_confirmed",
+      "licence": "OGL v3 expected; verify before fetch",
+      "attribution": "Contains public sector information licensed under the Open Government Licence v3.0",
+      "redistribution_state": "check_terms",
+      "target": "build/parquet/regulator/ofgem/licence_register/",
+      "notes": "Authoritative source for licensed DNO, IDNO, supplier and related electricity licence holders."
+    },
+    {
+      "source_id": "uk_government_public_data",
+      "source_class": "uk_government",
+      "title": "Stable UK government public energy-data source class",
+      "candidate_urls": [],
+      "format": "mixed",
+      "licence": "OGL v3 expected for most datasets; verify per dataset",
+      "attribution": "Contains public sector information licensed under the Open Government Licence v3.0",
+      "redistribution_state": "check_terms",
+      "target": "build/parquet/government/uk_government_public_data/",
+      "notes": "Use stable folder name. Store publishing department as data lineage, not as folder identity."
+    },
+    {
+      "source_id": "ireland_network_sources",
+      "source_class": "ireland",
+      "title": "Ireland and Northern Ireland network public datasets",
+      "candidate_urls": [],
+      "format": "mixed",
+      "licence": "verify per dataset",
+      "attribution": "Data attribution to be stored per dataset",
+      "redistribution_state": "restricted",
+      "target": "build/parquet/ireland/",
+      "notes": "Default restricted until ESB, EirGrid, SONI, NIE and regulator terms are confirmed."
+    }
+  ]
+}
