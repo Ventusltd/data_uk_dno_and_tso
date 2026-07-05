@@ -1,0 +1,4 @@
+dept_id,short_name,full_name,valid_from,valid_to,jurisdiction,schemaVersion,methodState,source,provenance,retrieved_at,notes
+decc,DECC,Department of Energy and Climate Change,2008-10-03,2016-07-14,UK,0.1.0,screening,declared_phase1_seed,declared,,verify against GOV.UK history before publication
+beis,BEIS,Department for Business Energy and Industrial Strategy,2016-07-14,2023-02-07,UK,0.1.0,screening,declared_phase1_seed,declared,,verify against GOV.UK history before publication
+desnz,DESNZ,Department for Energy Security and Net Zero,2023-02-07,,UK,0.1.0,screening,declared_phase1_seed,declared,,stable folder remains uk_government_public_data even if this department is renamed
