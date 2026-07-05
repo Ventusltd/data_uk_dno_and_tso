@@ -1,0 +1,15 @@
+operator_id,legal_name,brand_name,role,jurisdiction,regulator_id,parent_company,is_owner,is_system_operator,schemaVersion,methodState,source,provenance,retrieved_at,notes
+ukpn,,UK Power Networks,DNO,GB,ofgem,,true,false,0.1.0,screening,declared_phase1_seed,declared,,verify legal entities and parent before publication
+nged,,National Grid Electricity Distribution,DNO,GB,ofgem,,true,false,0.1.0,screening,declared_phase1_seed,declared,,formerly Western Power Distribution; verify legal entities before publication
+spen,,SP Energy Networks,DNO,GB,ofgem,,true,false,0.1.0,screening,declared_phase1_seed,declared,,covers SPD and SP Manweb licence areas
+ssen,,Scottish and Southern Electricity Networks Distribution,DNO,GB,ofgem,,true,false,0.1.0,screening,declared_phase1_seed,declared,,covers SHEPD and SEPD licence areas
+npg,,Northern Powergrid,DNO,GB,ofgem,,true,false,0.1.0,screening,declared_phase1_seed,declared,,covers Northeast and Yorkshire licence areas
+enwl,,Electricity North West,DNO,GB,ofgem,,true,false,0.1.0,screening,declared_phase1_seed,declared,,verify current trading name and ownership before publication
+neso,,National Energy System Operator,SO,GB,ofgem,,false,true,0.1.0,screening,declared_phase1_seed,declared,,operator not asset owner
+nget,,National Grid Electricity Transmission,TO,GB,ofgem,,true,false,0.1.0,screening,declared_phase1_seed,declared,,England and Wales transmission owner row to verify
+spt,,SP Transmission,TO,GB,ofgem,,true,false,0.1.0,screening,declared_phase1_seed,declared,,Scotland transmission owner row to verify
+ssen_t,,SSEN Transmission,TO,GB,ofgem,,true,false,0.1.0,screening,declared_phase1_seed,declared,,Scotland transmission owner row to verify
+nie_networks,,NIE Networks,DNO,NI,niur,,true,false,0.1.0,screening,declared_phase1_seed,declared,,Northern Ireland network owner/operator roles to verify
+esb_networks,,ESB Networks,DSO,RoI,cru,,true,false,0.1.0,screening,declared_phase1_seed,declared,,Republic of Ireland distribution operator row to verify
+eirgrid,,EirGrid,SO,RoI,cru,,false,true,0.1.0,screening,declared_phase1_seed,declared,,Republic of Ireland system operator row to verify
+soni,,SONI,SO,NI,niur,,false,true,0.1.0,screening,declared_phase1_seed,declared,,Northern Ireland system operator row to verify
