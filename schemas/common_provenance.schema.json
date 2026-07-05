@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/common_provenance.schema.json",
+  "title": "Common provenance fields",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "methodState",
+    "source",
+    "provenance"
+  ],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "methodState": { "type": "string" },
+    "source": { "type": "string" },
+    "provenance": {
+      "type": "string",
+      "enum": ["declared", "fetched", "derived", "restricted"]
+    },
+    "retrieved_at": { "type": ["string", "null"] },
+    "notes": { "type": ["string", "null"] }
+  }
+}
