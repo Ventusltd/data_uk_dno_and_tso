@@ -1,0 +1,9 @@
+operator_id,year,customers,connections,network_km,overhead_km,underground_km,substations,area_km2,peak_demand_mw,schemaVersion,methodState,source,provenance,retrieved_at,notes
+ukpn,,,,,,,,,,0.1.0,screening,declared_phase1_seed,declared,,placeholder only; populate after source verification
+nged,,,,,,,,,,0.1.0,screening,declared_phase1_seed,declared,,placeholder only; populate after source verification
+spen,,,,,,,,,,0.1.0,screening,declared_phase1_seed,declared,,placeholder only; populate after source verification
+ssen,,,,,,,,,,0.1.0,screening,declared_phase1_seed,declared,,placeholder only; populate after source verification
+npg,,,,,,,,,,0.1.0,screening,declared_phase1_seed,declared,,placeholder only; populate after source verification
+enwl,,,,,,,,,,0.1.0,screening,declared_phase1_seed,declared,,placeholder only; populate after source verification
+nie_networks,,,,,,,,,,0.1.0,screening,declared_phase1_seed,declared,,placeholder only; licence-gated
+esb_networks,,,,,,,,,,0.1.0,screening,declared_phase1_seed,declared,,placeholder only; licence-gated
