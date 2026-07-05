@@ -1,0 +1,26 @@
+name: Audit declared data
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate declared data
+        run: python scripts/validate_declared.py
+      - name: Build declared JSON receipts
+        run: python scripts/build_declared.py
