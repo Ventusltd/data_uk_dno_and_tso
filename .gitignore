@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.DS_Store
+
+# Generated outputs are reproducible from declared data and fetchers.
+build/
+audit/
+
+# Large local source snapshots should be intentionally added only after licence review.
+data/raw/
+archive/
